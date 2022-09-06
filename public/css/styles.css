@@ -1,5 +1,5 @@
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 .hamburguer-button {
@@ -28,7 +29,6 @@ body {
 
 .logo {
     width: 200px;
-    animation: aumentar 1000ms linear infinite alternate;
 }
 
 @keyframes aumentar {
@@ -38,6 +38,14 @@ body {
     100% {
         transform: scale(1.5);
     }
+}
+
+.main-main {
+    display: flex;
+    width: 90%;
+    margin-top: 241.73px;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .copy-header {
@@ -125,7 +133,24 @@ body {
     transition: all 450ms;
 }
 
+@media (min-width: 287px) {
+    .main-main {
+        display: flex;
+        width: 90%;
+        margin-top: 214.13px;
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+
 @media (min-width: 768px) {
+    .main-main {
+        display: flex;
+        width: 90%;
+        margin-top: 164.68px;
+        justify-content: space-around;
+        text-align: center;
+    }
     .main-header-top-bar {
         display: flex;
         justify-content: space-between;
@@ -150,6 +175,13 @@ body {
 }
 
 @media (min-width: 1200px) {
+    .main-main {
+        display: flex;
+        width: 90%;
+        margin-top: 180.85px;
+        justify-content: space-around;
+        text-align: center;
+    }
     .logo {
         width: 250px;
     }
@@ -180,13 +212,6 @@ body {
 .img-main {
     width: 350px;
     height: 450px;
-}
-
-.main-main {
-    display: flex;
-    width: 90%;
-    justify-content: space-around;
-    text-align: center;
 }
 
 .caja-general {
