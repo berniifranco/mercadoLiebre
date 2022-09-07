@@ -48,7 +48,8 @@ body {
 .main-main {
     display: flex;
     flex-wrap: nowrap;
-    width: 90%;
+    width: 100%;
+    padding: 25px;
     justify-content: center;
     text-align: center;
 }
@@ -158,6 +159,16 @@ body {
 
 .boton-enviar {
     background-color: #03264C;
+    color: white;
+}
+
+.boton-borrar {
+    background-color: red;
+    color: white;
+}
+
+.boton-borrar:hover {
+    background-color: rgba(255, 0, 0, 0.5);
     color: white;
 }
 
@@ -278,7 +289,7 @@ body {
         justify-content: space-between;
     }
     .main-main {
-        justify-content: start;
+        justify-content: center;
     }
     .titular {
         display: block;
@@ -311,13 +322,10 @@ body {
     }
 }
 
-@media (max-width: 829px) {
+@media (max-width: 767px) {
     .busqueda {
         display: none;
     }
-}
-
-@media (max-width: 768px) {
     .footer1 {
         display: flex;
         flex-direction: column;
