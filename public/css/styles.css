@@ -162,7 +162,7 @@ body {
 }
 
 .boton-enviar:hover {
-    background-color: #064487;
+    background-color: #0022AA;
 }
 
 #ofertas, #ultima {
@@ -223,6 +223,14 @@ body {
     padding: 10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
     border-radius: 5px;
+}
+
+.camioncito:hover {
+    animation: rotar 1s 1 forwards;
+}
+
+@keyframes rotar {
+    100% { transform: rotateZ(-90deg) }
 }
 
 @media (min-width: 768px) {
