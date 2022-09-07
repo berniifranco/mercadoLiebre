@@ -112,6 +112,43 @@ body {
     }
 }
 
+.borde-form {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-crear {
+    max-width: 90%;
+    margin-top: 25px;
+}
+
+.form-crear div {
+    margin: 10px;
+    padding: 5px;
+}
+
+.form-crear div input {
+    border-radius: 3px;
+}
+
+.borde-prod {
+    margin: 25px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+/*
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    box-shadow: 10px 5px 5px black;
+}
+*/
+
 @media (min-width: 1200px) {
     .contenedor-1200 {
         display: flex;
