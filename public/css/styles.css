@@ -80,16 +80,32 @@ body {
     text-align: center;
 }
 
+.articulos {
+    width: 75%;
+    background-color: grey;
+    box-shadow: 5px 10px #3f3f3f;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.nomprod {
+    padding-bottom: 15px;
+}
+
 .precio-desc {
     display: flex;
 }
 
 .precio {
     flex-grow: 3;
+    align-self: center;
 }
 
 .desc {
     flex-grow: 7;
+    color: green;
 }
 
 .footer1 {
@@ -171,6 +187,8 @@ body {
 
 .img-main {
     width: 50%;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .caja-general {
