@@ -24,6 +24,23 @@ body {
     margin: auto;
 }
 
+.main-header-top-bar, .main-navbar {
+    max-width: 1200px;
+    margin: auto;
+}
+.main-header-top-bar {
+    align-items: center;
+}
+
+.busqueda {
+    height: 100%;
+    width: 37%;
+}
+
+.busqueda input {
+    width: 100%;
+}
+
 .logo {
     width: 200px;
 }
@@ -59,6 +76,79 @@ body {
     font-size: 17px;
 }
 
+.titular {
+    text-align: center;
+}
+
+.precio-desc {
+    display: flex;
+}
+
+.precio {
+    flex-grow: 3;
+}
+
+.desc {
+    flex-grow: 7;
+}
+
+.footer1 {
+    display: flex;
+}
+
+.art-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconos-footer {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2rem;
+    color: #1259C3;
+}
+
+.iconos-footer:hover {
+    color: #113e82;
+}
+
+.contenedor-login {
+    background-color: gainsboro;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 300px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-login {
+    width: 75%;
+    height: 40px;
+}
+
+.input-login {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-enviar {
+    background-color: #03264C;
+    color: white;
+}
+
+.boton-enviar:hover {
+    background-color: #064487;
+}
+
 #ofertas, #ultima {
     display: flex;
     align-items: center;
@@ -88,6 +178,35 @@ body {
     padding: 15px;
 }
 
+.borde-form {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-crear {
+    max-width: 90%;
+    margin-top: 25px;
+    background-color: gainsboro;
+}
+
+.form-crear div {
+    margin: 10px;
+    padding: 5px;
+}
+
+.form-crear div input {
+    border-radius: 3px;
+}
+
+.borde-prod {
+    margin: 25px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
 @media (min-width: 768px) {
     .main-header-top-bar {
         display: flex;
@@ -111,43 +230,6 @@ body {
         margin: 0 5px;
     }
 }
-
-.borde-form {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-crear {
-    max-width: 90%;
-    margin-top: 25px;
-}
-
-.form-crear div {
-    margin: 10px;
-    padding: 5px;
-}
-
-.form-crear div input {
-    border-radius: 3px;
-}
-
-.borde-prod {
-    margin: 25px;
-    padding: 10px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-}
-
-/*
-.formulario {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    box-shadow: 10px 5px 5px black;
-}
-*/
 
 @media (min-width: 1200px) {
     .contenedor-1200 {
@@ -200,5 +282,18 @@ body {
     }
     .main-navbar a {
         font-size: 19px;
+    }
+}
+
+@media (max-width: 829px) {
+    .busqueda {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer1 {
+        display: flex;
+        flex-direction: column;
     }
 }
