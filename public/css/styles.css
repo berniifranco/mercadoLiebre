@@ -84,11 +84,14 @@ body {
 .articulos {
     width: 75%;
     background-color: grey;
-    box-shadow: 5px 10px #3f3f3f;
     border-radius: 10px;
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 20px;
+}
+
+.articulos:hover {
+    box-shadow: 5px 10px #3f3f3f;
 }
 
 .nomprod {
@@ -244,6 +247,22 @@ body {
     100% { transform: rotateZ(-90deg) }
 }
 
+@media (max-width: 767px) {
+    .busqueda {
+        display: none;
+    }
+    .footer1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ultima, #ofertas {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15%;
+    }
+}
+
 @media (min-width: 768px) {
     .main-header-top-bar {
         display: flex;
@@ -319,15 +338,5 @@ body {
     }
     .main-navbar a {
         font-size: 19px;
-    }
-}
-
-@media (max-width: 767px) {
-    .busqueda {
-        display: none;
-    }
-    .footer1 {
-        display: flex;
-        flex-direction: column;
     }
 }
