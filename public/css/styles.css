@@ -30,8 +30,9 @@ body {
 
 .main-main {
     display: flex;
+    flex-wrap: nowrap;
     width: 90%;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
 }
 
@@ -77,22 +78,17 @@ body {
     width: 80%;
 }
 
-@media (min-width: 287px) {
-    .main-main {
-        display: flex;
-        width: 90%;
-        justify-content: space-around;
-        text-align: center;
-    }
+
+.img-main {
+    width: 50%;
+}
+
+.caja-general {
+    border-top: solid #ebebeb 1px;
+    padding: 15px;
 }
 
 @media (min-width: 768px) {
-    .main-main {
-        display: flex;
-        width: 90%;
-        justify-content: space-around;
-        text-align: center;
-    }
     .main-header-top-bar {
         display: flex;
         justify-content: space-between;
@@ -117,11 +113,31 @@ body {
 }
 
 @media (min-width: 1200px) {
-    .main-main {
+    .contenedor-1200 {
         display: flex;
-        width: 90%;
-        justify-content: space-around;
-        text-align: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .ofertas-none {
+        display: none;
+    }
+    #ultima, #ofertas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .arti1, .arti2, .arti3, .arti4 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-main {
+        justify-content: start;
+    }
+    .titular {
+        display: block;
+        font-size: 1.5rem;
     }
     .logo {
         width: 250px;
@@ -148,14 +164,4 @@ body {
     .main-navbar a {
         font-size: 19px;
     }
-}
-
-.img-main {
-    width: 350px;
-    height: 450px;
-}
-
-.caja-general {
-    border-top: solid #ebebeb 1px;
-    padding: 15px;
 }
