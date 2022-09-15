@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mainRouter = require('./src/routes/mainRouter');
+const productRouter = require('./src/routes/productRouter');
+const usersRouter = require('./src/routes/usersRouter');
 
 /*
 app.listen(3000, () => {
@@ -14,34 +17,8 @@ app.listen(process.env.PORT || 3002, function() {
 
 app.use(express.static(path.join(__dirname, './public')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'));
-});
+app.set('view engine', 'ejs');
 
-app.get('/help', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/ayuda.html'));
-});
-
-app.get('/compras', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/compras.html'));
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/login.html'));
-});
-
-app.get('/ofertas', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/ofertas.html'));
-});
-
-app.get('/registro', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/register.html'));
-});
-
-app.get('/tiendas', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/tiendas.html'));
-});
-
-app.get('/vender', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/vender.html'));
-});
+app.use('/', mainRouter);
+app.use('/compras', productRouter);
+app.use('/users', usersRouter); 
