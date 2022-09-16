@@ -5,12 +5,6 @@ const mainRouter = require('./src/routes/mainRouter');
 const productRouter = require('./src/routes/productRouter');
 const usersRouter = require('./src/routes/usersRouter');
 
-/*
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
-});
-*/
-
 app.listen(process.env.PORT || 3002, function() {
     console.log("Servidor corriendo en el puerto 3002");
 });
