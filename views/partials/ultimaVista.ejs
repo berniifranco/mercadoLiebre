@@ -1,0 +1,27 @@
+<h2 class="titular">Basado en tu última visita</h2>
+<section id="ultima">
+    <div class="arti1">
+        <% for (let i=0; i < 2; i++) { %>
+            <a href="/productos/detalle/<%= productos[i].id %>"><article class="articulos">
+                <img src="/img/<%= productos[i].rutaImg %>" alt="<%= productos[i].nombre %>" class="img-main">
+                <div class="precio-desc">
+                    <p class="precio">$ <%= productos[i].precio %>.-</p>
+                    <p class="desc"><i class="fa-solid fa-truck-fast iconos-main-truck camioncito"></i><br><%= productos[i].descuento %></p>
+                </div>         
+                <p class="nomprod"><%= productos[i].nombre %></p>
+            </article></a>
+        <% } %>
+    </div>
+    <div class="arti2">
+        <% for (let i=2; i < 4; i++) { %>
+            <a href="/productos/detalle/<%= productos[i].id %>"><article class="articulos">
+                <img src="/img/<%= productos[i].rutaImg %>" alt="<%= productos[i].nombre %>" class="img-main">
+                <div class="precio-desc">
+                    <p class="precio">$ <%= productos[i].precio %>.-</p>
+                    <p class="desc"><i class="fa-solid fa-truck-fast iconos-main-truck camioncito"></i><br><%= productos[i].descuento %></p>
+                </div>
+                <p class="nomprod"><%= productos[i].nombre %></p>
+            </article></a>
+        <% } %>
+    </div>
+</section>

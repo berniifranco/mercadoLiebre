@@ -20,5 +20,5 @@ app.use(express.static(path.join(__dirname, './public')));
 app.set('view engine', 'ejs');
 
 app.use('/', mainRouter);
-app.use('/compras', productRouter);
+app.use('/productos', productRouter);
 app.use('/users', usersRouter); 

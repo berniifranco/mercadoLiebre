@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Detalle de producto</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <div class="arti1">
+        <article class="articulos">
+            <img src="/img/<%= producto.rutaImg %>" alt="<%= producto.nombre %>" class="img-main">
+            <div class="precio-desc">
+                <p class="precio">$ <%= producto.precio %></p>
+                <p class="desc"><i class="fa-solid fa-truck-fast iconos-main-truck camioncito"></i><br><%= producto.descuento %></p>
+            </div>         
+            <p class="nomprod"><%= producto.nombre %></p>
+        </article>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+</html>

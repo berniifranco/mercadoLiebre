@@ -6,6 +6,10 @@ body {
     font-family: 'Roboto';
 }
 
+a {
+    text-decoration: none;
+}
+
 .main-header {
     background-color: #EAC926;
     padding: 20px;
