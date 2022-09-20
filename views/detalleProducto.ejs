@@ -14,6 +14,10 @@
                 <p class="desc"><i class="fa-solid fa-truck-fast iconos-main-truck camioncito"></i><br><%= producto.descuento %></p>
             </div>         
             <p class="nomprod"><%= producto.nombre %></p>
+            <a href="/productos/editar/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/productos/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
         </article>
     </div>
     <%- include('./partials/footer') %>
