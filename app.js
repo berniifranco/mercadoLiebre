@@ -19,4 +19,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', mainRouter);
 app.use('/productos', productRouter);
-app.use('/users', usersRouter); 
+app.use('/users', usersRouter);
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+});
