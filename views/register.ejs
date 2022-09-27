@@ -9,7 +9,7 @@
     <main>
         <div class="borde-form">
             <div class="form-crear borde-prod">
-                <form action="/" method="GET" class="formulario">
+                <form action="/users/register" method="POST" class="formulario">
                     <div>
                         <input type="text" name="nomape" id="nomape" placeholder="Nombre y apellido" minlength="4" required>
                     </div>
@@ -26,17 +26,17 @@
                     <div>
                         <label for="perfil">Perfil de usuario</label><br>
                         <label for="vend">Vendedor</label>
-                        <input type="radio" name="perfil" id="vend">
+                        <input type="radio" name="perfil" value="vend">
                         <label for="comp">Comprador</label>
-                        <input type="radio" name="perfil" id="comp">
+                        <input type="radio" name="perfil" value="comp">
                     </div>
                     <div>
                         <label for="categorias">Categorías de interes (puede elegir mas de una)</label><br>
-                        <input type="checkbox" name="categorias" id="categorias" id="elec">Electro<br>
-                        <input type="checkbox" name="categorias" id="categorias" id="moda">Moda<br>
-                        <input type="checkbox" name="categorias" id="categorias" id="hog">Hogar<br>
-                        <input type="checkbox" name="categorias" id="categorias" id="jug">Juguetería<br>
-                        <input type="checkbox" name="categorias" id="categorias" id="vida">Vida sana<br>
+                        <input type="checkbox" name="categorias" value="elec">Electro<br>
+                        <input type="checkbox" name="categorias" value="moda">Moda<br>
+                        <input type="checkbox" name="categorias" value="hog">Hogar<br>
+                        <input type="checkbox" name="categorias" value="jug">Juguetería<br>
+                        <input type="checkbox" name="categorias" value="vida">Vida sana<br>
                     </div>
                     <div>
                         <label for="foto">Foto de usuario</label>

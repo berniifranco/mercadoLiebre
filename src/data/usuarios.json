@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nomape": "Bernardo Franco",
+        "nomusu": "berniifranco",
+        "fecha": "1992-09-25",
+        "dom": "pi y margall 420",
+        "perfil": "comp",
+        "categorias": [
+            "elec",
+            "jug"
+        ],
+        "foto": "camion41.jpeg",
+        "contra": "1560013735",
+        "confirmar": "1560013735"
+    },
+    {
+        "id": 2,
+        "nomape": "Marcelo Franco",
+        "nomusu": "marcefran",
+        "fecha": "1970-02-25",
+        "dom": "aristobulo del valle 1553",
+        "perfil": "vend",
+        "categorias": "hog",
+        "foto": "camion41.jpeg",
+        "contra": "1541717362",
+        "confirmar": "1541717362"
+    }
+]

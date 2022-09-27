@@ -2,8 +2,8 @@
  {
   "id": 1,
   "nombre": "Cafetera Moulinex",
-  "precio": 20000,
-  "descuento": 15,
+  "precio": "15999",
+  "descuento": "15",
   "rutaImg": "img-cafetera-moulinex.jpg",
   "category": "visited",
   "description": "Cafetera para hacer café"

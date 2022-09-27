@@ -1,8 +1,22 @@
 const productController = require('../controllers/productController');
 const express = require('express');
-const { Router } = require('express');
 const router = express.Router();
+const multer = require('multer');
 
+// Seteo MULTER
+const multerDiskStorage = multer.diskStorage({
+    destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
+     cb(null, path.join(__dirname,'../../public/img'));    // Ruta donde almacenamos el archivo
+    },
+    filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
+     let imageName = Date.now() + path.extname(file.originalname);   // milisegundos y extensión de archivo original
+     cb(null, imageName);         
+    }
+});
+
+const uploadFile = multer({ storage: multerDiskStorage });
+
+/* DETALLE DE PRODUCTO */
 router.get('/detalle/:id', productController.detalle);
 /* EDITAR PRODUCTO */
 router.get('/editar/:id', productController.editar);
