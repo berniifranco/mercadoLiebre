@@ -5,10 +5,13 @@ const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/mainRouter');
 const productRouter = require('./src/routes/productRouter');
 const usersRouter = require('./src/routes/usersRouter');
+const logMiddleware = require('./middlewares/logMiddleware');
 
 app.listen(process.env.PORT || 3002, function() {
     console.log("Servidor corriendo en el puerto 3002");
 });
+
+app.use(logMiddleware);
 
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.urlencoded({extended: false}));
