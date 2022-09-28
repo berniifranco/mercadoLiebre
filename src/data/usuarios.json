@@ -25,5 +25,24 @@
         "foto": "camion41.jpeg",
         "contra": "1541717362",
         "confirmar": "1541717362"
+    },
+    {
+        "id": 3,
+        "nomape": "Rene Rodriguez",
+        "nomusu": "renerodri",
+        "email": "berniifranco@gmail.com",
+        "fecha": "1992-09-25",
+        "dom": "Atistobulo del valle 1553",
+        "perfil": "vend",
+        "categorias": [
+            "elec",
+            "moda",
+            "hog",
+            "jug",
+            "vida"
+        ],
+        "foto": "GeForce-RTX-4090.jpg",
+        "contra": "37197505",
+        "confirmar": "37197505"
     }
 ]

@@ -7,6 +7,53 @@
 <body>
     <%- include('./partials/header') %>
     <h1>Crear producto</h1>
+    <div class="borde-form">
+        <div class="form-crear borde-prod">
+            <form action="/productos/vender" method="POST" enctype="multipart/form-data" class="formulario">
+                <div>
+                    <input type="text" name="nombre" placeholder="Nombre">
+                </div>
+                <div>
+                    <input type="number" name="precio" placeholder="Precio">
+                </div>
+                <div>
+                    <input type="number" name="descuento" placeholder="Descuento">
+                </div>
+                <div>
+                    <label for="rutaImg">Foto de producto</label>
+                    <input type="file" name="cImage" id="cImage" accept="image/*">
+                </div>
+                <div>
+                    <label for="category">Categoría</label>
+                    <select name="category">
+                        <option value="elec">
+                            Electro
+                        </option>
+                        <option value="moda">
+                            Moda
+                        </option>
+                        <option value="hog">
+                            Hogar
+                        </option>
+                        <option value="jug" selected>
+                            Juguetería
+                        </option>
+                        <option value="vida">
+                            Vida Sana
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="description">Descripción del producto</label><br>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="boton-enviar">Crear</button>
+                    <button type="reset" class="boton-borrar">Borrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <%- include('./partials/footer') %>
 </body>
 </html>

@@ -44,8 +44,8 @@ const productController = {
         for (let o of detalleProducto) {
             if (o.id == idProducto) {
                 o.nombre = datosProducto.nombre;
-                o.precio = datosProducto.precio;
-                o.descuento = datosProducto.descuento;
+                o.precio = parseInt(datosProducto.precio);
+                o.descuento = parseInt(datosProducto.descuento);
                 o.category = datosProducto.category;
                 o.description = datosProducto.description;
                 break;
@@ -73,8 +73,31 @@ const productController = {
     vender: (req, res) => {
         res.render('vender');
     },
+    guardar: (req, res) => {
+        let nuevoId = (detalleProducto[detalleProducto.length-1].id)+1;
+        let datos = req.body;
+
+        let nuevoProducto = {
+            "id": nuevoId,
+            "nombre": datos.nombre,
+            "precio": parseInt(datos.precio),
+            "descuento": parseInt(datos.descuento),
+            "category": datos.category,
+            "description": datos.description,
+            "rutaImg": req.file.filename
+        };
+
+        detalleProducto.push(nuevoProducto);
+
+        fs.writeFileSync(productosTotales, JSON.stringify(detalleProducto, null, 4), 'utf-8');
+
+        res.redirect('/');
+    },
     ofertas: (req, res) => {
         res.render('ofertas', {productos: detalleProducto});
+    },
+    listado: (req, res) => {
+        res.render('productos', {productos: detalleProducto});
     }
 };
 

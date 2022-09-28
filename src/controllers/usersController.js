@@ -30,6 +30,7 @@ const usersController = {
             "id": idNuevo,
             "nomape": datos.nomape,
             "nomusu": datos.nomusu,
+            "email": datos.email,
             "fecha": datos.fecha,
             "dom": datos.dom,
             "perfil": datos.perfil,

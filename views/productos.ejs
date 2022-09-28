@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Listado de Productos</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <section id="ofertas">
+        <div class="arti3">
+            <% for (o of productos) { %>
+                <a href="/productos/detalle/<%= o.id %>"><article class="articulos">
+                    <img src="/img/<%= o.rutaImg %>" alt="<%= o.nombre %>" class="img-main">
+                    <div class="precio-desc">
+                        <p class="precio">$<%= o.precio %>.-</p>
+                        <p class="desc"><i class="fa-solid fa-truck-fast iconos-main-truck camioncito"></i><br><%= o.descuento %> % OFF</p>
+                    </div>
+                    <p class="nomprod"><%= o.nombre %></p>
+                </article></a>
+            <% } %>
+        </div>
+    </section>
+    <%- include('./partials/footer') %>
+</body>
+</html>

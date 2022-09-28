@@ -1,74 +1,83 @@
 [
- {
-  "id": 1,
-  "nombre": "Cafetera Moulinex",
-  "precio": "15999",
-  "descuento": "15",
-  "rutaImg": "img-cafetera-moulinex.jpg",
-  "category": "visited",
-  "description": "Cafetera para hacer café"
- },
- {
-  "id": 2,
-  "nombre": "MacBook Pro 2019",
-  "precio": 245000,
-  "descuento": 20,
-  "rutaImg": "img-macbook-pro-2019.jpg",
-  "category": "visited",
-  "description": "La mejor notebook del mundo"
- },
- {
-  "id": 3,
-  "nombre": "Samsung Galaxy S10",
-  "precio": 130000,
-  "descuento": 40,
-  "rutaImg": "img-samsung-galaxy-s10.jpg",
-  "category": "visited",
-  "description": "El celular mas fachero"
- },
- {
-  "id": 4,
-  "nombre": "SmartTV Samsung",
-  "precio": "199999",
-  "descuento": "15",
-  "rutaImg": "img-tv-samsung-smart.jpg",
-  "category": "visited",
-  "description": "La TV smart mas grande"
- },
- {
-  "id": 5,
-  "nombre": "SmartTV Samsung",
-  "precio": 200000,
-  "descuento": 15,
-  "rutaImg": "img-tv-samsung-smart.jpg",
-  "category": "visited",
-  "description": "La TV smart mas grande"
- },
- {
-  "id": 6,
-  "nombre": "Samsung Galaxy S10",
-  "precio": 130000,
-  "descuento": 40,
-  "rutaImg": "img-samsung-galaxy-s10.jpg",
-  "category": "visited",
-  "description": "El celular mas fachero"
- },
- {
-  "id": 7,
-  "nombre": "MacBook Pro 2022",
-  "precio": 250000,
-  "descuento": 20,
-  "rutaImg": "img-macbook-pro-2019.jpg",
-  "category": "visited",
-  "description": "La mejor notebook del mundo"
- },
- {
-  "id": 1,
-  "nombre": "Cafetera Moulinex",
-  "precio": 20000,
-  "descuento": 15,
-  "rutaImg": "img-cafetera-moulinex.jpg",
-  "category": "visited",
-  "description": "Cafetera para hacer café"
- }
+    {
+        "id": 1,
+        "nombre": "Cafetera Moulinex",
+        "precio": "15999",
+        "descuento": 15,
+        "rutaImg": "img-cafetera-moulinex.jpg",
+        "category": "visited",
+        "description": "Cafetera para hacer café"
+    },
+    {
+        "id": 2,
+        "nombre": "MacBook Pro 2019",
+        "precio": 245000,
+        "descuento": 20,
+        "rutaImg": "img-macbook-pro-2019.jpg",
+        "category": "visited",
+        "description": "La mejor notebook del mundo"
+    },
+    {
+        "id": 3,
+        "nombre": "Samsung Galaxy S10",
+        "precio": 130000,
+        "descuento": 40,
+        "rutaImg": "img-samsung-galaxy-s10.jpg",
+        "category": "visited",
+        "description": "El celular mas fachero"
+    },
+    {
+        "id": 4,
+        "nombre": "SmartTV Samsung",
+        "precio": 199999,
+        "descuento": 15,
+        "rutaImg": "img-tv-samsung-smart.jpg",
+        "category": "visited",
+        "description": "La TV smart mas grande"
+    },
+    {
+        "id": 5,
+        "nombre": "SmartTV Samsung",
+        "precio": 200000,
+        "descuento": 15,
+        "rutaImg": "img-tv-samsung-smart.jpg",
+        "category": "visited",
+        "description": "La TV smart mas grande"
+    },
+    {
+        "id": 6,
+        "nombre": "Samsung Galaxy S10",
+        "precio": 130000,
+        "descuento": 40,
+        "rutaImg": "img-samsung-galaxy-s10.jpg",
+        "category": "visited",
+        "description": "El celular mas fachero"
+    },
+    {
+        "id": 7,
+        "nombre": "MacBook Pro 2022",
+        "precio": 250000,
+        "descuento": 20,
+        "rutaImg": "img-macbook-pro-2019.jpg",
+        "category": "visited",
+        "description": "La mejor notebook del mundo"
+    },
+    {
+        "id": 8,
+        "nombre": "Cafetera Moulinex",
+        "precio": 20000,
+        "descuento": 15,
+        "rutaImg": "img-cafetera-moulinex.jpg",
+        "category": "visited",
+        "description": "Cafetera para hacer café"
+    },
+    {
+        "id": 9,
+        "nombre": "RTX 4090",
+        "precio": 375000,
+        "descuento": 10,
+        "category": "elec",
+        "description": "Placa de video Nvidia GeForce 4090",
+        "rutaImg": "1664328433758.jpg"
+    }
 ]
