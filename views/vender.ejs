@@ -11,10 +11,16 @@
         <div class="form-crear borde-prod">
             <form action="/productos/vender" method="POST" enctype="multipart/form-data" class="formulario">
                 <div>
-                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="text" id="nombre" name="nombre" value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Nombre">
+                    <% if (locals.errors && errors.nombre) { %>
+                        <h3><%= errors.nombre.msg %> </h3>
+                    <% } %>
                 </div>
                 <div>
-                    <input type="number" name="precio" placeholder="Precio">
+                    <input type="number" id="precio" name="precio" value="<%= locals.oldData ? oldData.precio : null %>" placeholder="Precio">
+                    <% if (locals.errors && errors.precio) { %>
+                        <h3><%= errors.precio.msg %> </h3>
+                    <% } %>
                 </div>
                 <div>
                     <input type="number" name="descuento" placeholder="Descuento">
@@ -22,9 +28,14 @@
                 <div>
                     <label for="rutaImg">Foto de producto</label>
                     <input type="file" name="cImage" id="cImage" accept="image/*">
+                    <% if (locals.errors && errors.cImage) { %>
+                        <h3>
+                            <%= errors.cImage.msg %> 
+                        </h3>
+                    <% } %>
                 </div>
                 <div>
-                    <label for="category">Categoría</label>
+                    <label for="category">Categoría:</label>
                     <select name="category">
                         <option value="elec">
                             Electro
@@ -45,7 +56,10 @@
                 </div>
                 <div>
                     <label for="description">Descripción del producto</label><br>
-                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="10"><%= locals.oldData ? oldData.description : null %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <h3><%= errors.description.msg %> </h3>
+                    <% } %>
                 </div>
                 <div>
                     <button type="submit" class="boton-enviar">Crear</button>

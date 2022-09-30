@@ -4,6 +4,8 @@ const path = require('path');
 const productosTotales = path.join(__dirname, '../data/productosUltima.json');
 const detalleProducto = JSON.parse(fs.readFileSync(productosTotales, 'utf-8'));
 
+const { validationResult } = require('express-validator');
+
 const productController = {
     detalle: (req, res) => {
         let idProducto = req.params.id;
@@ -77,21 +79,27 @@ const productController = {
         let nuevoId = (detalleProducto[detalleProducto.length-1].id)+1;
         let datos = req.body;
 
-        let nuevoProducto = {
-            "id": nuevoId,
-            "nombre": datos.nombre,
-            "precio": parseInt(datos.precio),
-            "descuento": parseInt(datos.descuento),
-            "category": datos.category,
-            "description": datos.description,
-            "rutaImg": req.file.filename
-        };
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let nuevoProducto = {
+                "id": nuevoId,
+                "nombre": datos.nombre,
+                "precio": parseInt(datos.precio),
+                "descuento": parseInt(datos.descuento),
+                "category": datos.category,
+                "description": datos.description,
+                "rutaImg": req.file.filename
+            };
+    
+            detalleProducto.push(nuevoProducto);
+    
+            fs.writeFileSync(productosTotales, JSON.stringify(detalleProducto, null, 4), 'utf-8');
+    
+            res.redirect('/');
+        } else {
+            res.render('vender', {errors: errors.mapped(), oldData: req.body});
+        }
 
-        detalleProducto.push(nuevoProducto);
-
-        fs.writeFileSync(productosTotales, JSON.stringify(detalleProducto, null, 4), 'utf-8');
-
-        res.redirect('/');
     },
     ofertas: (req, res) => {
         res.render('ofertas', {productos: detalleProducto});

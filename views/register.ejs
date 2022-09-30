@@ -11,13 +11,23 @@
             <div class="form-crear borde-prod">
                 <form action="/users/register" method="POST" class="formulario">
                     <div>
-                        <input type="text" name="nomape" id="nomape" placeholder="Nombre y apellido" minlength="4" required>
+                        <input type="text" name="nomape" id="nomape" value="<%= locals.oldData ? oldData.nomape : null %>" placeholder="Nombre y apellido" minlength="4">
+                        <% if (locals.errors && errors.nomape) { %>
+                            <h3>
+                                <%= errors.nomape.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
-                        <input type="text" name="nomusu" id="nomusu" placeholder="Nombre de usuari@" minlength="4" required>
+                        <input type="text" name="nomusu" id="nomusu" placeholder="Nombre de usuario" minlength="4">
                     </div>
                     <div>
-                        <input type="email" name="email" placeholder="E-Mail" required>
+                        <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="E-Mail">
+                        <% if (locals.errors && errors.email) { %>
+                            <h3>
+                                <%= errors.email.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
                         <label for="fecha">Fecha de nacimiento</label>
@@ -44,12 +54,27 @@
                     <div>
                         <label for="foto">Foto de usuario</label>
                         <input type="file" name="foto" id="foto" accept="image/*">
+                        <% if (locals.errors && errors.foto) { %>
+                            <h3>
+                                <%= errors.foto.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
-                        <input type="password" name="contra" id="contra" placeholder="Contraseña" required>
+                        <input type="password" name="contra" id="contra" placeholder="Contraseña">
+                        <% if (locals.errors && errors.contra) { %>
+                            <h3>
+                                <%= errors.contra.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
-                        <input type="password" name="confirmar" id="confirmar" placeholder="Confirmar contraseña" required>
+                        <input type="password" name="confirmar" id="confirmar" placeholder="Confirmar contraseña">
+                        <% if (locals.errors && errors.confirmar) { %>
+                            <h3>
+                                <%= errors.confirmar.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
                         <button type="submit" class="boton-enviar">Enviar</button>
