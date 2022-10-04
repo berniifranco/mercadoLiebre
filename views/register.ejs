@@ -80,6 +80,11 @@
                                 <%= errors.confirmar.msg %> 
                             </h3>
                         <% } %>
+                        <% if (locals.error && error.contra) { %>
+                            <h4>
+                                <%= error.contra.msg %> 
+                            </h4>
+                        <% } %>
                     </div>
                     <div>
                         <button type="submit" class="boton-enviar">Enviar</button>

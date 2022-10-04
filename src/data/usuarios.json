@@ -30,5 +30,24 @@
         "foto": "user-1664922743960.jpeg",
         "contra": "$2a$10$f2j6KIXmyd9.Ot8MkwRYLOBFSiLHZy659vzM5DkQaeaqtnRosfR6C",
         "confirmar": "$2a$10$FOxmzygX9h17fyuyLOeL6OO/1k.30g3cP295sae/VnXtRJD3oDV2q"
+    },
+    {
+        "id": 3,
+        "nomape": "Metallica",
+        "nomusu": "metallica",
+        "email": "metallica@gmail.com",
+        "fecha": "2022-04-30",
+        "dom": "av. del libertador 4000",
+        "perfil": "vend",
+        "categorias": [
+            "elec",
+            "moda",
+            "hog",
+            "jug",
+            "vida"
+        ],
+        "foto": "user-1664926561402.jpg",
+        "contra": "$2a$10$bDIx1n5uvt3nFQ.LTgbcCu5Me8c/8BT4G7e8Abu2K6V8G.axzKc.K",
+        "confirmar": "$2a$10$JSLWqRPAzHEMLDqO1ERqs.iKrhB1rzjnH9xhr5Wv0dpXQP9Jblhk."
     }
 ]
