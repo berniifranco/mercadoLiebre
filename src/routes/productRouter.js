@@ -4,6 +4,7 @@ const path = require('path');
 const router = express.Router();
 const { body } = require('express-validator');
 const uploadFile = require('../middlewares/multerProductsMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 /* VALIDACIONES */
 const validaciones = [
@@ -32,7 +33,7 @@ router.get('/listado', productController.listado);
 /* DETALLE DE PRODUCTO */
 router.get('/detalle/:id', productController.detalle);
 /* CREAR UN PRODUCTO*/
-router.get('/vender', productController.vender);
+router.get('/vender', authMiddleware, productController.vender);
 router.post('/vender', uploadFile.single('cImage'), validaciones, productController.guardar)
 /* EDITAR PRODUCTO */
 router.get('/editar/:id', productController.editar);

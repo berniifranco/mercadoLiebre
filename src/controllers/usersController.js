@@ -103,6 +103,10 @@ const usersController = {
 
             req.session.usuarioLogueado = usuarioALoguearse;
 
+            if (datos.recordame != undefined) {
+                res.cookie('recordame', req.session.usuarioLogueado.nomusu, { maxAge: ((((1000 * 60) * 60) * 24) * 365) })
+            };
+
             res.redirect('/');
 
         } else {
@@ -112,6 +116,7 @@ const usersController = {
     },
     logout: (req, res) => {
         req.session.destroy();
+        res.clearCookie('recordame');
         res.redirect('/');
     },
     registro: (req, res) => {
