@@ -2,22 +2,8 @@ const productController = require('../controllers/productController');
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const multer = require('multer');
 const { body } = require('express-validator');
-
-
-// Seteo MULTER
-const multerDiskStorage = multer.diskStorage({
-    destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
-     cb(null, path.join(__dirname,'../../public/img'));    // Ruta donde almacenamos el archivo
-    },
-    filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
-     let imageName = Date.now() + path.extname(file.originalname);   // milisegundos y extensión de archivo original
-     cb(null, imageName);         
-    }
-});
-
-const uploadFile = multer({ storage: multerDiskStorage });
+const uploadFile = require('../middlewares/multerProductsMiddleware');
 
 /* VALIDACIONES */
 const validaciones = [
@@ -26,7 +12,7 @@ const validaciones = [
     body('description').notEmpty().withMessage('Debe completar el campo Descripción'),
     body('cImage').custom((value, { req }) => {
         let file = req.file;
-        let accepted = ['.jpg', '.png', '.gif'];
+        let accepted = ['.jpg', '.png', '.gif', '.jpeg'];
 
         if (!file) {
             throw new Error('Tienes que subir una imagen')
@@ -53,6 +39,7 @@ router.get('/editar/:id', productController.editar);
 router.put('/editar/:id', productController.update);
 /* ELIMINAR UN PRODUCTO */
 router.delete('/:id', productController.destroy);
+
 router.get('/compras', productController.compras);
 router.get('/ofertas', productController.ofertas);
 

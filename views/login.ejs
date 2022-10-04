@@ -8,13 +8,24 @@
     <%- include('./partials/header') %>
     <div class="contenedor-login">
         <div>
-            <form action="/" method="GET">
+            <form action="/users/login" method="POST">
                 <div class="form-login">
+                    <% if (locals.error && error.email) { %>
+                        <h3>
+                            <%= error.email.msg %> 
+                        </h3>
+                    <% } %>
                     <div class="div-login">
-                        <input type="text" name="nomusu" id="nomusu" placeholder="Nombre de usuari@" required class="input-login">
+                        <input type="text" name="nomusu" id="nomusu" value="<%= locals.oldData && oldData.nomusu ? oldData.nomusu : null %>" placeholder="Nombre de usuari@" class="input-login">
+                        <% if (locals.errors && errors.nomusu) { %>
+                            <h4><%= errors.nomusu.msg %></h4>
+                        <% } %>
                     </div>
                     <div class="div-login">
-                        <input type="password" name="contra" id="contra" placeholder="Contraseña" required class="input-login">
+                        <input type="password" name="contra" id="contra" placeholder="Contraseña" class="input-login">
+                        <% if (locals.errors && errors.contra) { %>
+                            <h4><%= errors.contra.msg %></h4>
+                        <% } %>
                     </div>
                     <div class="div-login">
                         <button type="submit" class="input-login boton-enviar">Enviar</button>

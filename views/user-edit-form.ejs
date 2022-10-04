@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Registro</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <div class="borde-form">
+            <div class="form-crear borde-prod">
+                <form action="/users/edit/<%= usuario.id %>?_method=PUT" method="POST" class="formulario">
+                    <div>
+                        <input type="text" name="nomape" id="nomape" value="<%= usuario.nomape %>">
+                    </div>
+                    <div>
+                        <input type="text" name="nomusu" id="nomusu" value="<%= usuario.nomusu %>">
+                    </div>
+                    <div>
+                        <input type="email" name="email" value="<%= usuario.email %>">
+                    </div>
+                    <div>
+                        <input type="text" name="dom" id="dom" value="<%= usuario.dom %>">
+                    </div>
+                    <div>
+                        <button type="submit" class="boton-enviar">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

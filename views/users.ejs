@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Listado de Usuarios</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <section id="ofertas">
+        <div class="arti3">
+            <% for( let o of usuarios ) { %>
+                <a href="/users/detail/<%= o.id %>"><article class="articulos">
+                    <img src="/img/users/<%= o.foto %>" alt="<%= o.nomape %>" class="img-main">
+                    <div class="precio-desc">
+                        <p class="precio"><%= o.nomusu %></p>
+                    </div>
+                    <p class="nomprod"><%= o.email %></p>
+                </article></a>
+            <% } %>
+        </div>
+    </section>
+    <%- include('./partials/footer') %>
+</body>
+</html>

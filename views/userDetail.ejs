@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Detalle de Usuario</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <div class="arti1">
+        <article class="articulos">
+            <img src="/img/users/<%= usuario.foto %>" alt="<%= usuario.nomape %>" class="img-main">
+            <div class="precio-desc">
+                <p class="precio"><%= usuario.email %></p>
+            </div>         
+            <p class="nomprod"><%= usuario.nomusu %></p>
+            <a href="/users/edit/<%= usuario.id %>" class="action-button edit">EDITAR USUARIO</a>
+						<form action="/users/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+        </article>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+</html>

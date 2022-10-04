@@ -60,10 +60,20 @@ const productController = {
     },
     destroy: (req, res) => {
         let idProductoX = req.params.id;
+        let imageX;
 
         let nuevaListaProductos = detalleProducto.filter(function(e) {
             return e.id != idProductoX;
         });
+
+        for (o of detalleProducto) {
+            if (o.id == idProductoX) {
+                imageX = o.rutaImg;
+                break;
+            }
+        };
+
+        fs.unlinkSync(path.join(__dirname, '../../public/img/products', imageX));
 
         fs.writeFileSync(productosTotales, JSON.stringify(nuevaListaProductos, null, " "), 'utf-8');
 

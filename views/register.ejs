@@ -9,7 +9,7 @@
     <main>
         <div class="borde-form">
             <div class="form-crear borde-prod">
-                <form action="/users/register" method="POST" class="formulario">
+                <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data">
                     <div>
                         <input type="text" name="nomape" id="nomape" value="<%= locals.oldData ? oldData.nomape : null %>" placeholder="Nombre y apellido" minlength="4">
                         <% if (locals.errors && errors.nomape) { %>
@@ -19,7 +19,12 @@
                         <% } %>
                     </div>
                     <div>
-                        <input type="text" name="nomusu" id="nomusu" placeholder="Nombre de usuario" minlength="4">
+                        <input type="text" name="nomusu" id="nomusu" value="<%= locals.oldData ? oldData.nomusu : null %>" placeholder="Nombre de usuario" minlength="4">
+                        <% if (locals.errors && errors.nomusu) { %>
+                            <h3>
+                                <%= errors.nomusu.msg %> 
+                            </h3>
+                        <% } %>
                     </div>
                     <div>
                         <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="E-Mail">

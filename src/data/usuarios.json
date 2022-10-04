@@ -1,48 +1,34 @@
 [
     {
         "id": 1,
+        "nomape": "Familia Franco",
+        "nomusu": "famfran",
+        "email": "familia@franco.com",
+        "fecha": "1992-09-25",
+        "dom": "A. del valle 1553",
+        "perfil": "vend",
+        "categorias": [
+            "hog",
+            "jug"
+        ],
+        "foto": "user-1664919993070.jpeg",
+        "contra": "$2a$10$kjlSxUiL8U3nNU64vx8ghuAVaE9mA/ivpYsxnkfkLgnCueju8fRf6",
+        "confirmar": "$2a$10$sXy9wERL8kKDX/ElgkwPS.N/yjlUiUQtNsx75/HyuxgY0JTk7OL3e"
+    },
+    {
+        "id": 2,
         "nomape": "Bernardo Franco",
         "nomusu": "berniifranco",
+        "email": "berniifranco@gmail.com",
         "fecha": "1992-09-25",
-        "dom": "pi y margall 420",
+        "dom": "Pi y Margall 420",
         "perfil": "comp",
         "categorias": [
             "elec",
             "jug"
         ],
-        "foto": "camion41.jpeg",
-        "contra": "1560013735",
-        "confirmar": "1560013735"
-    },
-    {
-        "id": 2,
-        "nomape": "Marcelo Franco",
-        "nomusu": "marcefran",
-        "fecha": "1970-02-25",
-        "dom": "aristobulo del valle 1553",
-        "perfil": "vend",
-        "categorias": "hog",
-        "foto": "camion41.jpeg",
-        "contra": "1541717362",
-        "confirmar": "1541717362"
-    },
-    {
-        "id": 3,
-        "nomape": "Rene Rodriguez",
-        "nomusu": "renerodri",
-        "email": "berniifranco@gmail.com",
-        "fecha": "1992-09-25",
-        "dom": "Atistobulo del valle 1553",
-        "perfil": "vend",
-        "categorias": [
-            "elec",
-            "moda",
-            "hog",
-            "jug",
-            "vida"
-        ],
-        "foto": "GeForce-RTX-4090.jpg",
-        "contra": "37197505",
-        "confirmar": "37197505"
+        "foto": "user-1664922743960.jpeg",
+        "contra": "$2a$10$f2j6KIXmyd9.Ot8MkwRYLOBFSiLHZy659vzM5DkQaeaqtnRosfR6C",
+        "confirmar": "$2a$10$FOxmzygX9h17fyuyLOeL6OO/1k.30g3cP295sae/VnXtRJD3oDV2q"
     }
 ]
