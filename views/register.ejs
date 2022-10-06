@@ -10,6 +10,11 @@
         <div class="borde-form">
             <div class="form-crear borde-prod">
                 <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data">
+                    <% if (locals.errormail && errormail.mail) { %>
+                        <h3 style="color: red ;">
+                            <%= errormail.mail.msg %> 
+                        </h3>
+                    <% } %>
                     <div>
                         <input type="text" name="nomape" id="nomape" value="<%= locals.oldData ? oldData.nomape : null %>" placeholder="Nombre y apellido" minlength="4">
                         <% if (locals.errors && errors.nomape) { %>

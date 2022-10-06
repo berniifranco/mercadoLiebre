@@ -134,37 +134,51 @@ const usersController = {
         }
 
         let errors = validationResult(req);
+        let mailDuplicado = null;
 
         if (errors.isEmpty()) {
+            for (let o of usuarios) {
+                if (datos.email == o.email) {
+                    mailDuplicado = o;
+                    res.render('register', { errormail: {
+                        mail: {
+                            msg: 'El E-Mail ya está registrado'
+                        }
+                    } });
+                    break;
+                }
+            };
 
-            if (datos.contra == datos.confirmar) {
-                let usuarioNuevo = {
-                    "id": idNuevo,
-                    "nomape": datos.nomape,
-                    "nomusu": datos.nomusu,
-                    "email": datos.email,
-                    "fecha": datos.fecha,
-                    "dom": datos.dom,
-                    "perfil": datos.perfil,
-                    "categorias": datos.categorias,
-                    "foto": req.file.filename,
-                    "contra": bcrypt.hashSync(datos.contra),
-                    "confirmar": bcrypt.hashSync(datos.confirmar)
+            if (mailDuplicado == null) {
+                if (datos.contra == datos.confirmar) {
+                    let usuarioNuevo = {
+                        "id": idNuevo,
+                        "nomape": datos.nomape,
+                        "nomusu": datos.nomusu,
+                        "email": datos.email,
+                        "fecha": datos.fecha,
+                        "dom": datos.dom,
+                        "perfil": datos.perfil,
+                        "categorias": datos.categorias,
+                        "foto": req.file.filename,
+                        "contra": bcrypt.hashSync(datos.contra),
+                        "confirmar": bcrypt.hashSync(datos.confirmar)
+                    };
+            
+                    usuarios.push(usuarioNuevo);
+            
+                    fs.writeFileSync(usersFilePath, JSON.stringify(usuarios, null, 4), 'utf-8');
+            
+                    res.redirect('/');
+    
+                } else {
+                    res.render('register', { error: {
+                        contra: {
+                            msg: 'Las cotraseñas no coinciden'
+                        }
+                    } })
                 };
-        
-                usuarios.push(usuarioNuevo);
-        
-                fs.writeFileSync(usersFilePath, JSON.stringify(usuarios, null, 4), 'utf-8');
-        
-                res.redirect('/');
-
-            } else {
-                res.render('register', { error: {
-                    contra: {
-                        msg: 'Las cotraseñas noo coinciden'
-                    }
-                } })
-            }
+            };
 
         } else {
             res.render('register', {errors: errors.mapped(), oldData: datos});
