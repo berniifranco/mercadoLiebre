@@ -7,6 +7,16 @@ const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
+function generarIdUser () {
+    let idUserNuevo;
+    if (usuarios.length != 0) {
+        idUserNuevo = (usuarios[usuarios.length-1].id)+1;
+    } else {
+        idUserNuevo = 1;
+    };
+    return idUserNuevo;
+}
+
 const usersController = {
     inicio: (req, res) => {
         res.render('users', {usuarios: usuarios});
@@ -123,15 +133,7 @@ const usersController = {
         res.render('register')
     },
     storage: (req, res) => {
-
-        let idNuevo;
         let datos = req.body;
-
-        if (usuarios == "") {
-            idNuevo = 1;
-        } else {
-            idNuevo = (usuarios[usuarios.length-1].id)+1;
-        }
 
         let errors = validationResult(req);
         let mailDuplicado = null;
@@ -152,7 +154,7 @@ const usersController = {
             if (mailDuplicado == null) {
                 if (datos.contra == datos.confirmar) {
                     let usuarioNuevo = {
-                        "id": idNuevo,
+                        "id": generarIdUser(),
                         "nomape": datos.nomape,
                         "nomusu": datos.nomusu,
                         "email": datos.email,

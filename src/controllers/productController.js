@@ -4,6 +4,16 @@ const path = require('path');
 const productosTotales = path.join(__dirname, '../data/productosUltima.json');
 const detalleProducto = JSON.parse(fs.readFileSync(productosTotales, 'utf-8'));
 
+function generarIdProd () {
+    let idProdNuevo;
+    if (detalleProducto.length != 0) {
+        idProdNuevo = (detalleProducto[detalleProducto.length-1].id)+1;
+    } else {
+        idProdNuevo = 1;
+    };
+    return idProdNuevo;
+}
+
 const { validationResult } = require('express-validator');
 
 const productController = {
@@ -86,13 +96,12 @@ const productController = {
         res.render('vender');
     },
     guardar: (req, res) => {
-        let nuevoId = (detalleProducto[detalleProducto.length-1].id)+1;
         let datos = req.body;
 
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let nuevoProducto = {
-                "id": nuevoId,
+                "id": generarIdProd(),
                 "nombre": datos.nombre,
                 "precio": parseInt(datos.precio),
                 "descuento": parseInt(datos.descuento),
