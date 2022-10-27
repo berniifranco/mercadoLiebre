@@ -38,10 +38,10 @@
  {
   "id": 5,
   "nombre": "SmartTV Samsung",
-  "precio": 200000,
-  "descuento": 15,
+  "precio": 299000,
+  "descuento": 10,
   "rutaImg": "img-tv-samsung-smart.jpg",
-  "category": "visited",
+  "category": "in-sale",
   "description": "La TV smart mas grande"
  },
  {

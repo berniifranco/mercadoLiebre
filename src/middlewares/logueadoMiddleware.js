@@ -1,9 +1,11 @@
-function logueado (req, res, next) {
-    if (!req.session.usuarioLogueado) {
-        next();
-    } else {
-        res.send('Ya estas logueado');
-    }
+function usuarioLogueado (req, res, next) {
+
+if (req.session.usuarioLogueado != undefined) {
+    res.locals.usuario = req.session.usuarioLogueado
+}
+
+next();
+
 };
 
-module.exports = logueado;
+module.exports = usuarioLogueado;

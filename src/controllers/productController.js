@@ -44,9 +44,6 @@ const productController = {
         if (productoBuscado != null) {
             res.render('product-edit-form', {producto: productoBuscado});
         };
-
-        res.send('Producto no encontrado')
-        console.log(productoBuscado)
     },
     update: (req, res) => {
         let idProducto = req.params.id;
