@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Listado de Productos</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <!--CODIGO PARA PELICULAS-->
+    <ul>
+        <% for( let o of peliculas ) { %>
+        <li>
+            <a href="/peliculas/<%= o.id %>"><%= o.title %></a>
+        </li>
+        <% } %>
+    </ul>
+    <%- include('./partials/footer') %>
+</body>
+</html>

@@ -7,6 +7,7 @@ const session = require('express-session');
 const mainRouter = require('./src/routes/mainRouter');
 const productRouter = require('./src/routes/productRouter');
 const usersRouter = require('./src/routes/usersRouter');
+const peliculasRouter = require('./src/routes/peliculasRouter');
 const recordameMiddleware = require('./src/middlewares/recordameMiddleware');
 const usuarioLogueado = require('./src/middlewares/logueadoMiddleware')
 
@@ -28,6 +29,7 @@ app.set('view engine', 'ejs');
 app.use('/', mainRouter);
 app.use('/productos', productRouter);
 app.use('/users', usersRouter);
+app.use('/peliculas', peliculasRouter);
 app.use((req, res, next) => {
     res.status(404).render('not-found');
 });
