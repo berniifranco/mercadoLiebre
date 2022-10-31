@@ -15,6 +15,30 @@ const peliculasController = {
         .then(function(pelicula) {
             res.render('detallePelicula', {pelicula: pelicula});
         })
+    },
+    drama: (req, res) => {
+        db.Peliculas.findAll({
+            where: {
+                genre_id: 3
+            }
+        })
+            .then(function(peliculas) {
+                res.render('peliculasDrama', {peliculas: peliculas})
+            })
+    },
+    top: (req, res) => {
+        db.Peliculas.findAll({
+            where: {
+                rating: {[db.Sequelize.Op.gt] : 8}
+            },
+            order: [
+                ['rating', 'DESC']
+            ],
+            limit: 5
+        })
+            .then(function(peliculas) {
+                res.render('top', {peliculas: peliculas})
+            })
     }
 };
 
